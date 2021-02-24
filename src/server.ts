@@ -1,14 +1,10 @@
-import express, { response } from 'express';
-
+import 'reflect-metadata'
+import express, { response, Router } from 'express';
+import "./database"
+import { router } from "./routes"
 const app = express();
-//rota e dps request response
-app.get("/", (request, response) => {
-    return response.json({ message: "Hello" })
-})
-
-app.post("/", (request, response) => {
-    return response.json({ message: "Informação gravada com sucesso" })
-})
+app.use(express.json())
+app.use(router)
 
 app.listen(3333, () => console.log("Server is running!"))
 
