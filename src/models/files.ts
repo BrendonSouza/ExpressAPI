@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn} from "typeorm"
 
 @Entity()
-export class Users {
+export class Files {
     @PrimaryGeneratedColumn()
     readonly id: string
 
@@ -9,12 +9,12 @@ export class Users {
     name: string
 
     @Column()
-    email: string
+    size: Number
 
     @Column()
-    password: string
+    key: string
 
     @Column()
-    role: string
+    url: string
 
 }
